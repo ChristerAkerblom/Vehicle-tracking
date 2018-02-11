@@ -142,5 +142,6 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-The filtering approach both in each frame by heatmaps and between frames by confidence measures was succesful. A better tuning of both classification parameters, search windows and filtering parameters will amke the file even more robust.
+The filtering approach both in each frame by heatmaps and between frames by confidence measures was succesful. A better tuning of both classification parameters, search windows and filtering parameters will make the file even more robust.
 
+Currently the classifier is ony trained on passenger cars and also from a limited view angle. City traffic where vehicles entering from the side or different types of vehicles will not be detected by the classifier.
