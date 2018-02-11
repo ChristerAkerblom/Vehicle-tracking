@@ -10,9 +10,10 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./examples/car.png
-[image15]: ./examples/noncar.png
-[image2]: ./examples/HOG_example.jpg
+[image1]: ./output_images/car.png
+[image15]: ./output_images/noncar.png
+[image2]: ./output_images/hog_car.png
+[image25]: ./output_images/hog_noncar.png
 [image3]: ./examples/sliding_windows.jpg
 [image4]: ./examples/sliding_window.jpg
 [image5]: ./examples/bboxes_and_heat.png
@@ -35,19 +36,23 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+Here is an example using the `YCrCb` color using Y channel space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2).
 
+Here is an exampl of a car.
 ![alt text][image2]
+
+Here is an example of a non car.
+![alt text][image2.5]
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
+I tried various combinations of features but and ....
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-The code for this step is contained in the code cell with heading *Extract features for training classifier* of the IPython notebook.
+The code for this step is contained in the code cell with heading `Extract features for training classifier` of the IPython notebook.
 I used both HOG and color features, spatial and histogram, for classification. 
-A gridsearch method was used to find the best *C* parameter for the linear SVM classifier and a low *C=0.01* was used. The training test accuracy was 0.984.
+A gridsearch method was used to find the best `C` parameter for the linear SVM classifier and a low `C=0.01` was used. The training test accuracy was `0.984`.
 
 ### Sliding Window Search
 
