@@ -48,7 +48,8 @@ Here is an example of a non car.
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of features but and ....
+I based my choice of parameters trying to balance both speed and accuracy of the CVM classifier using the data set.
+I used `YCrCb` color space and channel Y for hog features. Color histogram and spatial features where also used.
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
@@ -62,11 +63,16 @@ A gridsearch method was used to find the best `C` parameter for the linear SVM c
 
 I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
 
+In the section titled "Method for Using Classifier to Detect Cars in an Image" I adapted the method find_cars from the lesson materials. The method combines HOG feature extraction with a sliding window search, but rather than perform feature extraction on each window individually which can be time consuming, the HOG features are extracted for the entire image (or a selected portion of it) and then these full-image features are subsampled according to the size of the window and then fed to the classifier. The method performs the classifier prediction on the HOG features for each window region and returns a list of rectangle objects corresponding to the windows that generated a positive ("car") prediction.
+
+The image below shows the first attempt at using find_cars on one of the test images, using a single window size:
+
 ![alt text][image3]
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+Windows 
+Tracking
 
 ![alt text][image4]
 ---
