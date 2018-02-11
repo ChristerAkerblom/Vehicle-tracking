@@ -61,9 +61,11 @@ A gridsearch method was used to find the best `C` parameter for the linear SVM c
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+In the section `Processing pipeline (sub)` the sliding window search is implemented. HOG features are calculated once for the complete channel 0 following the project tips. The HOG features are combined with the spatial and histogram color features and then fed to the classifier.
 
-In the section titled "Method for Using Classifier to Detect Cars in an Image" I adapted the method find_cars from the lesson materials. The method combines HOG feature extraction with a sliding window search, but rather than perform feature extraction on each window individually which can be time consuming, the HOG features are extracted for the entire image (or a selected portion of it) and then these full-image features are subsampled according to the size of the window and then fed to the classifier. The method performs the classifier prediction on the HOG features for each window region and returns a list of rectangle objects corresponding to the windows that generated a positive ("car") prediction.
+For each frame the follwing regions were searched for vehicles ([y_start, y_stop, scale]):
+
+`y_start_stop_scale = [[380,500,1.0], [380,550,1.5], [420,600,2.0], [450,680,3.0]]`
 
 The image below shows the first attempt at using find_cars on one of the test images, using a single window size:
 
