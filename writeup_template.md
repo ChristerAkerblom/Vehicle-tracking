@@ -107,7 +107,28 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ### Here are six frames and their corresponding heatmaps:
 
-![alt text][image5]
+![alt text][image500]
+![alt text][image501]
+
+
+![alt text][image510]
+![alt text][image511]
+
+
+![alt text][image520]
+![alt text][image521]
+
+
+![alt text][image530]
+![alt text][image531]
+
+
+![alt text][image540]
+![alt text][image541]
+
+
+![alt text][image550]
+![alt text][image551]
 
 ### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
 ![alt text][image6]
