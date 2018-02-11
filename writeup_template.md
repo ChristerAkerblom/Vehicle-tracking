@@ -83,18 +83,6 @@ For each frame the follwing regions were searched for vehicles ([y_start, y_stop
 
 `y_start_stop_scale = [[380,500,1.0], [380,550,1.5], [420,600,2.0], [450,680,3.0]]`
 
-The image below shows the first attempt at using find_cars on one of the test images, using a single window size:
-
-![alt text][image3]
-
-#### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
-
-Windows 
-Tracking
-
-![alt text][image4]
----
-
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
